@@ -1,28 +1,59 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div style="height: 800px;">
+    </div>
+    <img id="profile_img" alt="profile" src="./assets/profile.jpeg">
+    <h1>mikazuki</h1>
+    <ScrollFadeIn>
+      <ContentCard>
+        <template v-slot:date>
+          <p>2022/01</p>
+        </template>
+        <template v-slot:title>
+          <p>大学入学</p>
+        </template>
+        <template v-slot:content>
+          <p>入学したお<br>休学したいお</p>
+        </template>
+      </ContentCard>
+    </ScrollFadeIn>
+    <ScrollFadeIn>
+      <ContentCard>
+      </ContentCard>
+    </ScrollFadeIn>
+    <ScrollFadeIn><ContentCard></ContentCard></ScrollFadeIn>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ScrollFadeIn from './components/ScrollFadeIn.vue'
+import ContentCard from './components/ContentCard.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+    
+    }
+  },
   components: {
-    HelloWorld
-  }
+    ScrollFadeIn,
+    ContentCard
+}
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
+
+#profile_img {
+  width: 130px;
+  height: 130px;
+  border: 5px solid green;
+  border-radius: 50%;
+}
+
 </style>
